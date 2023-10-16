@@ -9,18 +9,18 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-ARRIA_HALF_TIME_URL = 'https://app.studio.arria.com:443/alite_content_generation_webapp/text/7LRXLPrMaxb'
-ARRIA_HALF_TIME_API_KEY = "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJEQnFYQVdPaUZNbVgtZkcyU0IxWndZSjAiLCJpYXQiOjE2Nzc3OTc4OTMsImV4cCI6MTgzNTQ3Nzg5MywiaXNzIjoiQUxpdGUiLCJzdWIiOiJkbXBxNktuY0REOXgiLCJBTGl0ZS5wZXJtIjpbInByczp4OjdMUlhMUHJNYXhiIl0sIkFMaXRlLnR0IjoidV9hIn0.6bQVjv7-gG3oBl3vU8EUnq1KlVPV9a4KoIHFNO2341cIfKwEiauG2KGIfmeXAEQwj6SsNXgrNfghyWYdiIt6Rw"
+ARRIA_HALF_TIME_URL = os.getenv("ARRIA_HALF_TIME_URL")
+ARRIA_HALF_TIME_API_KEY = os.getenv("ARRIA_HALF_TIME_API_KEY")
 
-ARRIA_LIVE_EVENTS_URL = "https://app.studio.arria.com:443/alite_content_generation_webapp/text/DkjPwMgz79y"
-ARRIA_LIVE_EVENTS_API_KEY = "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJoaXNlOExOVkx2QU1xX2VxSW94VzJubDIiLCJpYXQiOjE2Nzc4OTUxNjYsImV4cCI6MTgzNTU3NTE2NiwiaXNzIjoiQUxpdGUiLCJzdWIiOiJ6ZVpleW91Vjl0MjMiLCJBTGl0ZS5wZXJtIjpbInByczp4OkRralB3TWd6Nzl5Il0sIkFMaXRlLnR0IjoidV9hIn0.li8VewvgawXFj0PHiw7rfJohd1jnCfH1NcBkRAZo548DIfRfgLINfgNmM1DqUTeJ3sLfNZoscnmtXRqmUDOS3A"
+ARRIA_LIVE_EVENTS_URL = os.getenv("ARRIA_LIVE_EVENTS_URL")
+ARRIA_LIVE_EVENTS_API_KEY = os.getenv("ARRIA_LIVE_EVENTS_API_KEY")
 
-ARRIA_PLAYERS_STATS_URL = 'https://app.studio.arria.com:443/alite_content_generation_webapp/text/D87lyDXLjNE'
-ARRIA_PLAYERS_STATS_API_KEY = 'eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJVRHd4WjF5LVVBWXVNeTU3ZGtWVjRQcUEiLCJpYXQiOjE2Nzc5ODA2NTgsImV4cCI6MTgzNTY2MDY1OCwiaXNzIjoiQUxpdGUiLCJzdWIiOiJUenlXYzRzVkxjQnQiLCJBTGl0ZS5wZXJtIjpbInByczp4OkQ4N2x5RFhMak5FIl0sIkFMaXRlLnR0IjoidV9hIn0.VHnohhE-YpspEcWR3AXLCYWBQV4U1LwRPknNu-V0rTdwEdpDZBUA6Hg0qDPS6W7keLpvnaLE3NfLvNBwRoB1EQ'
+ARRIA_PLAYERS_STATS_URL = os.getenv('ARRIA_PLAYERS_STATS_URL')
+ARRIA_PLAYERS_STATS_API_KEY = os.getenv("ARRIA_PLAYERS_STATS_API_KEY")
 
-RAPID_API_KEY = "6031f0ba74mshb213c10367fcb11p1c8781jsnf535b6a42182"
-RAPID_API_HOST = "api-football-v1.p.rapidapi.com"
-RAPID_API_URL = "https://api-football-v1.p.rapidapi.com"
+RAPID_API_KEY = os.getenv("RAPID_API_KEY")
+RAPID_API_HOST = os.getenv("RAPID_API_HOST")
+RAPID_API_URL = os.getenv("RAPID_API_URL")
 RAPID_API_VERSION = "v3"
 
 @app.route("/api/query", methods=['POST'])
